@@ -3,12 +3,10 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use app\widgets\Alert;
+
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\AdminAsset;
+use yii\helpers\Url;
 
 AdminAsset::register($this);
 ?>
@@ -34,8 +32,15 @@ AdminAsset::register($this);
                 <a href="#" class="x-navigation-control"></a>
             </li>
             <li class="xn-title"></li>
-            <li class="active">
-                <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Bosh saxifa</span></a>
+            <?php $controller=Yii::$app->controller->id ?>
+            <li class="<?= ($controller=='default')?'active':''?>">
+                <a href="<?= Url::to(['default/index']) ?>"><span class="fa fa-desktop"></span> <span class="xn-text">Bosh saxifa</span></a>
+            </li>
+            <li class="<?= ($controller=='product')?'active':'' ?>">
+                <a href="<?= Url::to(['product/index']) ?>"><span class="fa fa-shopping-cart "></span><span class="xn-text">Mahsulotlar</span></a>
+            </li>
+            <li class="<?= ($controller=='category')?'active':'' ?>">
+                <a href="<?= Url::to(['category/index']) ?>"><span class="fa fa-arrow-down "></span><span class="xn-text">Kategoriya</span></a>
             </li>
         </ul>
     </div>
@@ -139,7 +144,10 @@ AdminAsset::register($this);
                 </div>
             </li>
         </ul>
-        <?= $content ?>
+        <div style="margin: 10px 10px">
+            <?= $content ?>
+        </div>
+
 
     </div>
 </div>

@@ -43,13 +43,13 @@ $config = [
             ],
         ],
         'db' => $db,
-
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
                 'index'=>'site/index',
                 'login'=>'site/login',
+                'category/<id:\d+>'=>'category/view',
             ],
         ],
     ],

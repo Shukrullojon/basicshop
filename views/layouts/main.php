@@ -26,6 +26,8 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
+<?= \app\components\MenuWidget::widget(['tpl'=>'menu']) ?>
+
 <header class="primary">
     <div class="firstbar" style="padding: 0px">
         <div class="container">
@@ -80,24 +82,7 @@ AppAsset::register($this);
                     <li class="dropdown magz-dropdown">
                         <a href="category.html">Kategoriyalar<i class="ion-ios-arrow-right"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="index.html">Mens</a></li>
-                            <li><a href="index.html">Womens</a></li>
-                            <li><a href="index.html">Kids</a></li>
-                            <li class="dropdown magz-dropdown">
-                                <a href="#">Elektronika <i class="ion-ios-arrow-right"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="login.html">Kompyuter<i class="ion-ios-arrow-right"></i></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="login.html">Kompyuter</a></li>
-                                            <li><a href="register.html">Telefon</a></li>
-                                            <li><a href="forgot.html">Televizor</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="register.html">Telefon</a></li>
-                                    <li><a href="forgot.html">Televizor</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="single.html">Farmasevtika</a></li>
+                            <?= \app\components\MenuWidget::widget(['tpl'=>'menu']) ?>
                         </ul>
                     </li>
                     <li class="dropdown magz-dropdown"><a href="#">Chegirmalar <i class="ion-ios-arrow-right"></i></a>

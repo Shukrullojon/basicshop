@@ -694,3 +694,4 @@
         </div>
     </div>
 </div>
+<?= \app\components\MenuWidget::widget(['tpl'=>'menu']) ?>
